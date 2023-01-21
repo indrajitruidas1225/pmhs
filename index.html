@@ -14,15 +14,15 @@
   </head>
   <style>
     @media(max-width:480px){
-        .navbar{
-            width: 105%;
-        }
+        /* .navbar{
+            width: 100%;
+        } */
         .navbar h4{
           font-size: 20px;
         }
-        .temp{
-          width:105%;
-        }
+        /* .temp{
+          width:100%;
+        } */
     }
     /* @media(min-width:720px){
         .navbar{
@@ -33,7 +33,7 @@
         }
     } */
   </style>
-  <body>
+  <body style="background-color:rgb(190, 198, 198);">
     <div class="navbar bg-nav">
             <img src="img/pmhs.jpg" style="height: 70px;width:70px;border-radius: 100%;">
             <h4 class="text-white mr-4" style="font-family:Times;">Patharmora High School</h4>
@@ -101,7 +101,41 @@
                 </div>
             </div>
         </div>
+        <div class="col-12 col-md-4 mb-5 mt-3">
+          <div class="card" style="height:480px">
+            <div style="background-color: rgb(6, 6, 69);"><h4 class="text-white" style="text-align:center;font-family: Times;">Mail Us/Submit Grievence</h4></div>
+            <div class="card-body">
+              <input type="text" class="form-control" id="username" placeholder="Name"><br>
+              <input type="text" class="form-control" id="email" placeholder="Email"><br>
+              <input type="text" class="form-control" id="mobile" placeholder="Mobile"><br>
+              <textarea type="text" class="form-control" id="message" placeholder="Message" rows="6" cols="10"></textarea><br>
+              <button class="btn btn-md text-white" id="message-send" style="background-color:rgb(6, 6, 69);">Send</button>
+          </div>
+        </div>
+        </div>
+        
     <!-- </div> -->
+</div>
+<div style="background-color: rgb(43, 41, 41);">
+  <!-- <div class="card" style="background-color: rgb(43, 41, 41);"> -->
+  <div class="row">
+    <div class="col-12 col-md-6 ml-5 mt-3">
+      <h4 class="text-white">Address</h4>
+      <p class="text-white">Patharmora High School<br>
+      Village:Patharmora<br>
+      P.O:Nutan Balarampur<br>
+      PS:Sonamukhi<br>
+      Dist:Bankura<br>
+      Pin:722207</p>
+    </div>
+    <div class="col-12 col-md-4 ml-5 mt-3">
+      <h4 class="text-white">Contact</h4>
+      <p class="text-white">
+      Mobile: XXXXXXXXXX<br>
+      E-Mail: xyz@mail.com<br></p>
+    </div>
+  <!-- </div> -->
+  </div>
 </div>
   </body>
 </html>
