@@ -17,15 +17,15 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
 </head>
-<script>
+<script type="text/javascript">
   $(document).ready(function () {
     $('#message-send').click(function () {
-      var usename = $('#username').val()
+      var username = $('#username').val()
       var email = $('#email').val()
       var mobile = $('#mobile').val()
       var message = $('#message').val()
 
-      $('#message-box').html("<a href='mailto:indrajitruidascse@gmail.com?subject=Feedback&body=" + message + "</a>")
+      $('#message-box').html("<a href='mailto:indrajitruidascse@gmail.com?subject=Feedback&body=" + message + "[ Name : "+username+" Email : "+email+" Mobile :"+mobile+" ]' class='btn btn-md text-white' style='background-color: rgb(6, 6, 69);''>Send</a>")
     })
   })
 </script>
@@ -227,9 +227,9 @@
           <textarea type="text" class="form-control" id="message" placeholder="Message" rows="6"
             cols="10"></textarea><br>
           <div id="message-box">
-            <!-- <a></a> -->
+            <a class="btn btn-md text-white" id="message-send" style="background-color:green;">Save</a>
           </div>
-          <a class="btn btn-md text-white" id="message-send" style="background-color:rgb(6, 6, 69);">Send</a>
+          
         </div>
       </div>
     </div>
