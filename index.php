@@ -1,9 +1,25 @@
 <?php
   include "includes/navbar.php"
 ?>
+<style>
+  .blink {
+    animation: blinker 1.5s linear infinite;
+    color: red;
+    font-family: sans-serif;
+}
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+</style>
+<div style="background-color:white" class="">
+<marquee class="blink"> <h4 style="font-family:Times New Roman">Welcome to the Official Website of Patharmora High School</h4> </marquee>
+</div>
+
   <div class="row">
     <div class="col-12 col-md-6">
-      <div class="card mt-2">
+      <div class="card">
         <div class="card-body">
           <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -36,12 +52,12 @@
           <h3 class="mt-2 text-white" style="text-align: center; font-family: serif;">About Our School</h3>
         </div>
         <!-- <h3 class="mt-2" style="text-align: center; font-family: serif;">About Our School</h3> -->
-        <p style="font-family: monospace; text-align:center;" class="ml-2 mr-2 mt-1">PATHARMORA H.S was established in
+        <p style="font-family:'Lucida Sans'; text-align:center;" class="ml-2 mr-2 mt-1">PATHARMORA H.S was established in
           1961 and it is managed by the Department of Education. It is located in Rural area. It is located in SONAMUKHI
           block of BANKURA district of West Bengal. The school consists of Grades from 5 to 12. The school is
           Co-educational and it doesn't have an attached pre-primary section. The school is N/A in nature and is not
           using school building as a shift-school. Bengali is the medium of instructions in this school. This school is
-          approachable by all weather road. In this school academic session starts in April.</p>
+          approachable by all weather road. In this school academic session starts in January.</p>
         <!-- </div> -->
       </div>
     </div>
@@ -102,27 +118,9 @@
 
     <!-- </div> -->
   </div>
-  <div class="contact-div" style="background-color: rgb(43, 41, 41);">
-    <!-- <div class="card" style="background-color: rgb(43, 41, 41);"> -->
-    <div class="row">
-      <div class="col-9 col-md-6 ml-5 mt-3">
-        <h4 class="text-white">Address</h4>
-        <p class="text-white">Patharmora High School<br>
-          Village:Patharmora<br>
-          P.O:Nutan Balarampur<br>
-          PS:Sonamukhi<br>
-          Dist:Bankura<br>
-          Pin:722207</p>
-      </div>
-      <div class="col-9 col-md-4 ml-5 mt-3">
-        <h4 class="text-white">Contact</h4>
-        <p class="text-white">
-          Mobile: XXXXXXXXXX<br>
-          E-Mail: xyz@mail.com<br></p>
-      </div>
-      <!-- </div> -->
-    </div>
-  </div>
+  <?php
+    include "includes/contact_div.php";
+  ?>
 </body>
 
 </html>

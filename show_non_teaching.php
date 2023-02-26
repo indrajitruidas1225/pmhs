@@ -5,7 +5,7 @@ include "includes/dbconn.php";
 
 
 <div class="container">
-<h4 class="mt-2 mb-2">Here's the profiles of our Non-Teaching staffs</h4>
+<div style='background-color:#6B5B95;' class="mt-3"><marquee><h3 style='font-family:Times' class='mt-2 mb-2 ml-2 text-white'>Our Non-Teaching Staffs</h3></marquee></div>
     <div class="row">
         <?php
         $query = "SELECT * FROM staff WHERE designation like 'Clerk' or designation like 'Group D' or designation like 'Librarian'";
@@ -37,10 +37,15 @@ include "includes/dbconn.php";
                     <p>'.$desig.'</p>
                     
                 </div>
+                <a href="non_teaching_profile.php?id='.$row['staff_id'].'" class="btn btn-sm btn-info">See Profile</a>
             </div>
+            
         </div>
             ';
         }
         ?>
     </div>
 </div>
+<?php
+    include "includes/contact_div.php";
+  ?>

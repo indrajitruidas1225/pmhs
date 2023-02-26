@@ -14,8 +14,8 @@ include "includes/dbconn.php";
         '<div class="container">
         <div class="row">
             <div class="col-12 col-md-4 mt-3 mb-3">
-                <div class="card h-100">
-                <img src="stf_img/'.$img.'" class="card-img-top ml-5" style="height:300px;width:200px;">
+                <div class="card h-100 border-info">
+                <img src="stf_img/'.$img.'" class="card-img-top ml-5 mt-3" style="height:300px;width:200px;">
                 <div class="card-body">
                     <h4>Name : '.$name.'</h4>
                     <h4>Designation : '.$desig.'</h4>
@@ -26,10 +26,10 @@ include "includes/dbconn.php";
             
             </div>
             <div class="col-11 col-md-5 mt-3 mb-3 ml-2">
-                <div class="card">
+                <div class="card border-success">
                     <h4 class="mt-1 ml-3 mr -1">Contact information</h4>
-                    <span class="ml-3 mb-1">&#9742; XXXXXXXXXX</span>
-                    <span class="ml-3 mb-1">&#x1F4E7; XXXXXXXXXX</span>
+                    <span class="ml-3 mb-1">&#9742; 9475168637</span>
+                    <span class="ml-3 mb-1">&#x1F4E7; pg9475168637@gmail.com</span>
                 </div>
             </div>
     </div>
@@ -37,4 +37,7 @@ include "includes/dbconn.php";
         ;
     }
 ?>
+<?php
+    include "includes/contact_div.php";
+  ?>
 

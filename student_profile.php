@@ -5,7 +5,7 @@ include "includes/dbconn.php";
 
 
 <div class="container">
-<h4 class="mt-2  mb-2">Here's some profile of our passed out Students</h4>
+<div style='background-color:#6B5B95;' class="mt-3"><marquee><h3 style='font-family:Times' class='mt-2 mb-2 ml-2 text-white'>Our Passed Out Students</h3></marquee></div>
     <div class="row">
         <?php
         $query = "SELECT * FROM student";
@@ -44,3 +44,6 @@ include "includes/dbconn.php";
         ?>
     </div>
 </div>
+<?php
+    include "includes/contact_div.php";
+  ?>
