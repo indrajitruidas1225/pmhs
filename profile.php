@@ -51,7 +51,7 @@ include "includes/navbar.php";
         <div class="col-12 col-md-4 mt-3">
             <div class="card h-90 w-60" id="admin_card">
                 <span class="ml-1">Currently Logged In</span>
-                <img src='stf_img/<?php echo $_SESSION['img']; ?>' style="height:100px;width:100px;border-radius:100%" class="text-center ml-4" type="button" data-toggle="dropdown">
+                <img src='stf_img/<?php echo $_SESSION['img']; ?>' style="height:100px;width:100px;border-radius:100%" class="text-center ml-4" type="button" data-toggle="dropdown" alt="No Image">
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                     <form action="upload_picture1.php" method="POST" enctype="multipart/form-data">
                         <h4 class="ml-2">Upload a Profile Picture</h4>
@@ -61,7 +61,7 @@ include "includes/navbar.php";
                 </ul>
                 <h5 class="ml-2 mt-1 mb-1"><?php
                                             echo $_SESSION['name'] ?></h5>
-                <a id="log_out_btn" class="btn btn-danger btn-sm mt-1 mb-1" href="logout.php">Log Out</a>
+                <a id="log_out_btn" class="btn btn-danger btn-sm mt-1 mb-1" href="logout.php"><i class="fa fa-sign-out" aria-hidden="true" style="color:white"></i> Log Out</a>
             </div>
         </div>
         <div class="col-12 col-md-4 mt-3">

@@ -2,10 +2,20 @@
 include "includes/navbar.php";
 include "includes/dbconn.php";
 ?>
+<style>
+    .box {
+        transition: box-shadow .3s;
+        border-radius: 10px;
+    }
+
+    .box:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, .8);
+    }
+</style>
 <div class="container">
 <div class="row">
     <div class="col-12 col-md-6">
-    <img src="https://img.freepik.com/free-vector/colorful-science-education-background_23-2148490697.jpg?w=2000" class="ml-2 mt-2 mb-2 mr-2" style="height:300px;width:285px;">
+    <img src="https://img.freepik.com/free-vector/colorful-science-education-background_23-2148490697.jpg?w=2000" class="ml-2 mt-2 mb-2 mr-2" style="height:300px;width:285px;border-radius:5%;">
     </div>
     <div class="col-12 col-md-5">
         <p class="mt-3 ml-3">The subjects offered in Science are <br><b>1.Physics</b><br> <b>2.Chemistry</b><br> <b>3.Mathematics</b><br>
@@ -72,14 +82,14 @@ include "includes/dbconn.php";
                     <p>'.$desig.'</p>
                     <span>'.$qualifi.'</span>
                 </div>
-                <a href="non_teaching_profile.php?id='.$row['staff_id'].'" class="btn btn-sm btn-info">See Profile</a>
+                <a href="detail_profile.php?id='.$row['staff_id'].'" class="btn btn-sm btn-info">See Profile</a>
             </div>
         </div>
             ';
             else
-            echo '<div class="col-6 col-md-3 mt-3 mb-2">
+            echo '<div class="col-6 col-md-3 mt-3 mb-2 box">
             <div class="card h-100">
-            <img src="stf_img/'.$img.'" class="card-img-top" style="width:100%;height:200px;"alt="No Image">
+            <a href="detail_profile.php?id='.$row['staff_id'].'" ><img src="stf_img/'.$img.'" class="card-img-top" style="width:100%;height:200px;"alt="No Image"></a>
                 <div class="card-body">
                     <h5>'.$name.'</h5>
                     <p>'.$desig.'</p>

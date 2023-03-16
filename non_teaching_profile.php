@@ -22,14 +22,14 @@
     while($row=mysqli_fetch_assoc($result)){
         echo '
         <div class="col-12 col-md-5 mt-3" style="text-align:center">
-        <img src="stf_img/'.$row['img_path'].'" style="height:200px;width:200px;">
+        <img src="stf_img/'.$row['img_path'].'" style="height:200px;width:200px;border-radius:7px;" alt="No Image">
     </div>
     <div class="col-12 col-md-4 mt-3">
-        <h5><b>Name: </b>'.$row['name'].'</h5>
-        <h5><b>Designation: </b>'.$row['designation'].'</h5>
-        <p><b>Qualifications: </b>'.$row['qualifications'].'</p>
-        <h5><b>Specialization: </b>'.$row['specialization'].'</h4>
-        <h5><b>Date of Joining: </b>'.$row['doj'].'</h4>
+        <h5 style="font-family:serif"><b>Name: </b>'.$row['name'].'</h5>
+        <h5 style="font-family:serif"><b>Designation: </b>'.$row['designation'].'</h5>
+        <h5 style="font-family:serif"><b>Qualifications: </b>'.$row['qualifications'].'</h5>
+        <h5 style="font-family:serif"><b>Specialization: </b>'.$row['specialization'].'</h5>
+        <h5 style="font-family:serif"><b>Date of Joining: </b>'.$row['doj'].'</h5>
     </div>
     <div class="col-12 col-md-3 mt-3 mb-5">
     <div class="card border-success">

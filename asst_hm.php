@@ -14,13 +14,13 @@ include "includes/dbconn.php";
         '<div class="container">
         <div class="row">
             <div class="col-12 col-md-4 mt-3 mb-3">
-                <div class="card h-100 border-info">
-                <img src="stf_img/'.$img.'" class="card-img-top ml-5 mt-3" style="height:300px;width:200px;">
+                <div class="card h-100 border-info" style="border-radius:10px">
+                <img src="stf_img/'.$img.'" class="card-img-top ml-5 mt-3" style="height:260px;width:200px;border-radius:7px;" alt="No Image">
                 <div class="card-body">
-                    <h4>Name : '.$name.'</h4>
-                    <h4>Designation : '.$desig.'</h4>
-                    <p>'.$qualifi.'</p>
-                    <span>Appointment year:</span>
+                    <h4 style="font-family:serif">Name : '.$name.'</h4>
+                    <h4 style="font-family:serif">Designation : '.$desig.'</h4>
+                    <p style="font-family:serif">'.$qualifi.'</p>
+                    <span style="font-family:serif">Joining Date: 04-01-2000</span>
                 </div>
             </div>
             

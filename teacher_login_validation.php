@@ -3,8 +3,8 @@
     
     include "includes/dbconn.php";
     //receive html data
-    $email=$_POST['t_email'];
-    $password=$_POST['t_pass'];
+    $email=mysqli_real_escape_string($conn,$_POST['t_email']);
+    $password=mysqli_real_escape_string($conn,$_POST['t_pass']);
     //search query
     $query="SELECT * FROM teacher WHERE teacher_id LIKE '$email' AND password LIKE '$password'";
     $result=mysqli_query($conn,$query); //runs the query

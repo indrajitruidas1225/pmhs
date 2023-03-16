@@ -3,8 +3,8 @@
     
     include "includes/dbconn.php";
     //receive html data
-    $email=$_POST['a_email'];
-    $password=$_POST['a_pass'];
+    $email=mysqli_real_escape_string($conn,$_POST['a_email']);
+    $password=mysqli_real_escape_string($conn,$_POST['a_pass']);
     //search query
     $query="SELECT * FROM admin WHERE admin_id LIKE '$email' AND password LIKE '$password'";
     $result=mysqli_query($conn,$query); //runs the query
