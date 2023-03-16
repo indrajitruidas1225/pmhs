@@ -5,15 +5,6 @@ if (empty($_SESSION)) {
   $logged_in = 0;
   $teacher_log = 0;
 } else {
-  // if($_SESSION['name']=='null'){
-  //   $teacher_log=1;
-  //   $logged_in=0;
-  // }
-
-  // else{
-  //   $logged_in=1;
-  //   $teacher_log=0;
-  // }
   if (isset($_SESSION['t_name']) && !isset($_SESSION['name'])) {
     $teacher_log = 1;
     $logged_in = 0;
@@ -35,13 +26,21 @@ if (empty($_SESSION)) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="keywords" content="pmhs,patharmora,high,school,patharmora high school,mahespur
-  ,west bengal,manikbazar,madhyamik,hs" />
-  <meta name="description" content="Patharmora High School">
-  <title>Patharmora High School</title>
-  <link rel="icon" type="image/x-icon" href="/img/pmhs.jpg">
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
-  <link rel="stylesheet" href="https://rkmgec.ac.in/css/style.css?v=2.0">
+  ,west bengal,manikbazar,madhyamik,hs,pmhsonline,patharmara,indrajit,ruidas,narugopal,patharmara,pathar,Patharmora High School, Secondary_School, Sonamukhi, WB
+  ,Krishnabati,Maheshpur, Patharmora HS , Official Website of Patharmora High School,Patharmora High School Gallery" />
+  <meta name="description" content="Official Website of Patharmora High School (H.S) Address:Vill-Maheshpur,P.O-Nutan Balarampur,Dist-Bankura,Pin-722207. Patharmora High School(H.S) was established in
+          1961 and it is managed by the Department of Education. It is located in Rural area. It is located in SONAMUKHI
+          block of BANKURA district of West Bengal. The school consists of Grades from 5 to 12.">
+<meta property="og:title" content="Patharmora high school (H.S) | Sonamukhi" />
+<meta property="og:type" content="Secondary School" />
+<meta property="og:url" content="https://pmhsonline.com/" />
+<meta property="og:image:url" content="https://pmhsonline.com/img/og_image.jfif" />
+<meta property="og:description" content="Patharmora High School(H.S) was established in 1961 and it is managed by the Department of Education. It is located in Rural area. It is located in SONAMUKHI block of BANKURA district of West Bengal. " />
+  <title>Patharmora High School (H.S)</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://rkmgec.ac.in/css/style.css?v=2.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -50,15 +49,18 @@ if (empty($_SESSION)) {
 </head>
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#message-send').click(function() {
-      var username = $('#username').val()
-      var email = $('#email').val()
-      var mobile = $('#mobile').val()
-      var message = $('#message').val()
-
-      $('#message-box').html("<a href='mailto:indrajitruidascse@gmail.com?subject=Feedback&body=" + message + "[ Name : " + username + " Email : " + email + " Mobile :" + mobile + " ]' class='btn btn-md text-white' style='background-color: rgb(6, 6, 69);''>Send</a>")
+    
+    var icon=0;
+    $('.navbar-toggler').click(function(){
+      if(icon==0){
+        $('#icon-text').html('Close')
+        icon=1;
+      }
+      else{
+        $('#icon-text').html('Open')
+        icon=0;
+      }
     })
-
     $('#login_btn').click(function() {
       var a_email = $('#a_email').val()
       var a_pass = $('#a_pass').val()
@@ -124,12 +126,20 @@ if (empty($_SESSION)) {
 
   @media(min-width:768px) {
     .navbar .container {
-      margin-left: 300px;
+      width: 640px;
+      /* Can be in percentage also. */
+      height: auto;
+      margin: 0 auto;
+      padding: 5px;
+      position: relative;
     }
   }
 
   .dropdown-menu .dropdown-item:hover{
     background-color:rgba(0, 0, 0, 0.3);
+  }
+  .navbar-toggler-icon {
+    background-color:white;
   }
 </style>
 
@@ -140,7 +150,7 @@ if (empty($_SESSION)) {
 
       <div class="row noPadding">
         <div class="col-1 col-md-3 mt-2 mb-2">
-          <a href="index.php"><img src="img/pmhs.jpg" style="height: 60px;width:60px;border-radius: 100%;"></a>
+          <a href="index.php"><img src="img/pmhs.jpg" style="height: 60px;width:60px;border-radius: 100%;" alt="No Image"></a>
         </div>
         <div class="col-8 col-md-8 mt-3">
           <a href="index.php" style="text-decoration:none;">
@@ -148,24 +158,22 @@ if (empty($_SESSION)) {
           </a>
         </div>
         <div class="col-1 col-md-1 mt-2">
-          <img src="https://cdn.shopify.com/s/files/1/0272/4544/5199/products/PM_2178_1_7810574b-4403-401d-8bc5-ba409c3859d7_1340x.jpg?v=1575800986" style="height: 60px;width:60px;border-radius: 100%;">
+          <a href="index.php"><img src="img/vivek.jpg" style="height: 60px;width:60px;border-radius: 100%;" alt="No Image"></a>
         </div>
       </div>
     </div>
 
-    <!-- <img src="https://cdn.shopify.com/s/files/1/0272/4544/5199/products/PM_2178_1_7810574b-4403-401d-8bc5-ba409c3859d7_1340x.jpg?v=1575800986" style="height: 90px;width:70px;border-radius: 100%;" class="mr-4"> -->
+   
   </div>
-  <!-- <div class="temp" style="text-align: center"> -->
+  
 
-
-  <nav class="navbar navbar-expand-xl  navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#colNav">
-      <span class="navbar-toggler-icon"></span>
+  <nav class="navbar navbar-expand-xl navbar-dark bg-dark" >
+    <button class="navbar-toggler mb-1" type="button" data-toggle="collapse" data-target="#colNav">
+      <span class="navbar-toggler-icon" style="background-image:url('img/icon.png');width:35px;height:35px;"></span><span style="color:#fff;font-family:Verdana" class="ml-1" id="icon-text">Open</span>
     </button>
     <div class="collapse navbar-collapse" id="colNav">
       <ul class="navbar-nav">
-        <li class="nav-item" style="text-align: center;">
-          <!-- <a class ="nav-link" href ="#"> Contact Us </a> -->
+        
         <li class="nav-item" style="text-align: center;">
           <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle mt-1 mb-1 ml-1 mr-1" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="text-align:left" ;>
@@ -269,7 +277,7 @@ if (empty($_SESSION)) {
           }
 
           if ($teacher_log == 0) {
-            echo '<button class="btn btn-warning btn-sm mt-2 ml-2"  data-toggle="modal" data-target="#modalLoginForm1" style="float:right"><i class="fa fa-sign-in" aria-hidden="true" style="color:white;"></i>
+            echo '<button class="btn btn-warning btn-sm mt-2"  data-toggle="modal" data-target="#modalLoginForm1" style="margin-left:7px;"><i class="fa fa-sign-in" aria-hidden="true" style="color:white;"></i>
         Teacher LogIN
 </button>';
           } else {
