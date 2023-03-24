@@ -5,6 +5,7 @@ include "includes/dbconn.php";
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
 </script>
 <script src="send_email.js"></script>
+<script src="readmore.js"></script>
 <style>
   .blink {
     animation: blinker 1.5s linear infinite;
@@ -51,13 +52,28 @@ include "includes/dbconn.php";
     .overview {
       margin-left: 20px;
     }
-
+    .unique{
+      margin-left: 15px;
+    }
   }
-  
+
   body {
     overflow-x: hidden;
     /* Hide horizontal scrollbar */
   }
+
+  #more {
+    display: none;
+  }
+  #btn {
+    cursor: pointer;
+    color: blue;
+}
+table, table th, table td {
+    border-collapse: collapse;
+    border: #888 1px solid;
+    padding: 0 5px;
+}
 </style>
 <div style="background-color: white;" class="animation">
   <div class="container text">
@@ -114,13 +130,18 @@ include "includes/dbconn.php";
       </div>
 
       <p style="font-family:'Lucida Sans'; text-align:center;font-size:16px;" class="ml-2 mr-2 mt-1">Patharmora High School(H.S) was established in
-        1961 and it is managed by the Department of Education. It is located in Rural area. It is located in SONAMUKHI
-        block of BANKURA district of West Bengal. The school consists of Grades from 5 to 12. The school is
-        Co-educational and it doesn't have an attached pre-primary section. The school is N/A in nature and is not
-        using school building as a shift-school. Bengali is the medium of instructions in this school .Presently there's 26 Teaching Staffs and 6 Non-Teaching Staffs.
+        1961 and it is managed by the Department of Education. It is located in Rural area. It is located in Sonamukhi
+        block of Bankura district of West Bengal. The school consists of Grades from 5 to 12. Our school is
+        Co-educational and it doesn't have an attached pre-primary section. Bengali is the medium of instructions in this school .Presently there's 26 Teaching Staffs and 6 Non-Teaching Staffs.
         Students are admitted through a common adminssion test.The school is affiliated to WBBSE and WBCHSE.
-        This school is
-        approachable by all weather road. In this school academic session starts in January.</p>
+        Our school is
+        approachable by all weather road. In our school academic session starts in January.Our school <span id="dots">....</span>
+        <span id="more">has well-equipped <b style="font-family:'Lucida Sans';">Library , Laboratories , ICT Room for Computer Education .</b>Our school
+          also has a<b style="font-family:'Lucida Sans';"> hostel (R G Ashram Hostel ) for the boys belonging to SC category</b>.We also have <b style="font-family:'Lucida Sans';">Open Schooling
+            (Rabindra Open School)</b> upto HS(both Science & Arts).
+          Our school also has <b style="font-family:'Lucida Sans';">Vocational Stream (Mobile Repairing ),NCC Junior Wing (JD & JW) and well-equipped gymnasium.</b>
+        </span><a onclick="readmore()" id="read-btn" style="color:blue" type="button">Read More</a>
+      </p>
 
     </div>
   </div>
@@ -197,13 +218,32 @@ include "includes/dbconn.php";
     </div>
 
   </div>
+  <div class="col-12 col-md-4 mt-1 mb-2 unique">
+    <div class="card ">
+    <div style="background-color: rgb(6, 6, 69);">
+        <h4 class="text-white p-1" style="text-align:center;font-family:cursive;">What Makes Our School Unique ?</h4>
+      </div>
+    </div>
+    <div class="card-body" style="background-color: white;">
+    <p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have NCC Junior Wing (JD & JW) Affiliated 
+  to 53 Bengal BN NCC Bishnupur</p>
+  
+  <p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have an Open School
+(Rabindra Open School) upto 12th for both Science & Arts <a style="color:blue" href="open_school.php">(Click here)</a></p>
+<p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> Our School has
+Hostel Facility for boys belonging to SC Category.</p>
+<p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have Vocational Stream
+from class VIII (Mobile Repairing)</p>
+    </div>
+  </div>
   <div class="col-12 col-md-4 mb-2 mt-1 overview">
     <div class="card">
       <div style="background-color: rgb(6, 6, 69);">
         <h4 class="text-white p-1" style="text-align:center;font-family: Times;">Brief Overview of Our School</h4>
       </div>
       <div class="card-body">
-        <table>
+        <table class="tbl">
+          <tbody>
           <tr>
             <th>Particulars</th>
             <th>Total Count</th>
@@ -235,7 +275,27 @@ include "includes/dbconn.php";
             <td>N/A</td>
           </tr>
           <tr>
+            <td>Laboratories</td>
+            <td>4</td>
+            <td style="word-break:break-all">Physics,Chemistry,Biology,Geography</td>
+          </tr>
+          <tr>
+            <td>ICT Room</td>
+            <td>1</td>
+            <td style="word-break:break-all">For Computer Education</td>
+          </tr>
+          <tr>
+            <td>Hostel(R G Ashram Hostel)</td>
+            <td>1</td>
+            <td style="word-break:break-all">For SC Boys</td>
+          </tr>
+          <tr>
             <td>Playground</td>
+            <td>1</td>
+            <td>N/A</td>
+          </tr>
+          <tr>
+            <td>Gymnasium</td>
             <td>1</td>
             <td>N/A</td>
           </tr>
@@ -254,6 +314,7 @@ include "includes/dbconn.php";
             <td>1</td>
             <td>N/A</td>
           </tr>
+          </tbody>
         </table>
       </div>
     </div>
@@ -261,17 +322,17 @@ include "includes/dbconn.php";
 
 
   </div>
-  <div class="col-12 col-md-4 mb-5 mt-1 feedbackbox">
+  <div class="col-12 col-md-3 mb-5 mt-1 feedbackbox">
     <div class="card" style="height:480px">
       <div style="background-color: rgb(6, 6, 69);">
-        <h4 class="text-white p-1" style="text-align:center;font-family: Times;">Mail Us/Submit Grievence</h4>
+        <h4 class="text-white p-1" style="text-align:center;font-family: Times;">We Value Your Feedback !</h4>
       </div>
       <div class="card-body">
-        <input type="text" class="form-control" id="username" placeholder="Name" required/><br>
-        <input type="text" class="form-control" id="email" placeholder="Email" required/><br>
-        <input type="text" class="form-control" id="mobile" placeholder="Mobile" required/><br>
+        <input type="text" class="form-control" id="username" placeholder="Name" required /><br>
+        <input type="text" class="form-control" id="email" placeholder="Email" required /><br>
+        <input type="text" class="form-control" id="mobile" placeholder="Mobile" required /><br>
         <textarea type="text" class="form-control" id="message" placeholder="Message" rows="6" cols="10" required></textarea><br>
-        <button  class="btn btn-md text-white" id="message-send" style="background-color:green;" onClick="sendEmail()">Send</button>
+        <button class="btn btn-md text-white" id="message-send" style="background-color:green;" onClick="sendEmail()">Send</button>
 
       </div>
     </div>
