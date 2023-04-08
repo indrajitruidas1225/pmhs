@@ -1,45 +1,47 @@
 <?php
 include "includes/dbconn.php";
 include "includes/navbar.php";
+if(!isset($_SESSION['id'])){
+    echo 'No Log in Found';
+    exit;
+}
 ?>
 <script type="text/javascript">
-    $(document).ready(function(){
-        //alert('kk')
-        var a=window.location.href
-        var url=new URL(a)
-        //alert(a)
-        if(url.searchParams.get('result')==="success"){
+    $(document).ready(function() {
+        var a = window.location.href
+        var url = new URL(a)
+        if (url.searchParams.get('result') === "success") {
             alert("Notice Uploaded Successfully !")
-            window.location.href="profile.php"
-        }else if(url.searchParams.get('result')==="failed"){
+            window.location.href = "profile.php"
+        } else if (url.searchParams.get('result') === "failed") {
             alert("Notice Not Uploaded !")
-            window.location.href="profile.php"
+            window.location.href = "profile.php"
         }
-        $('#update_password1').click(function(){
-          
-          $('#password_change1').modal('show');
+        $('#update_password1').click(function() {
+
+            $('#password_change1').modal('show');
         })
-        $('#password_update1').click(function(){
-            var new_p=$('#new_p1').val()
-            var old_p=$('#old_p1').val()
-            //alert(old_p)
+        $('#password_update1').click(function() {
+            var new_p = $('#new_p1').val()
+            var old_p = $('#old_p1').val()
             $.ajax({
-                url:'change_password1.php',
-                method:'POST',
-                data:{'old_p':old_p,'new_p':new_p},
-                success(data){
-                    if(data.trim()==='1'){
+                url: 'change_password1.php',
+                method: 'POST',
+                data: {
+                    'old_p': old_p,
+                    'new_p': new_p
+                },
+                success(data) {
+                    if (data.trim() === '1') {
                         $('#u_area1').html('<p class="ml-3 mt-1 mb-1" style="color:green">Password Changed Succesfully !</p>')
-                        
-                    }
-                    else if(data.trim()==='-1'){
+
+                    } else if (data.trim() === '-1') {
                         $('#u_area1').html('<p class="ml-3 mt-1 mb-1" style="color:red">Error occurred !</p>')
-                    }
-                    else if(data.trim()==='0'){
+                    } else if (data.trim() === '0') {
                         $('#u_area1').html('<p class="ml-3 mt-1 mb-1" style="color:red">Old password not matched</p>')
                     }
                 },
-                error(data){
+                error(data) {
                     $('#u_area1').html(data.trim())
                 }
             })
@@ -67,69 +69,81 @@ include "includes/navbar.php";
         <div class="col-12 col-md-4 mt-3">
             <h4 class="mt-2">Upload a Notice</h4>
             <form action="upload_notice.php" method="POST" enctype="multipart/form-data">
-            <div class="card">
-                <div class="row">
-                    <div class="col-6 col-md-4">
-                        <input type="text" class="form-control mt-1 ml-1" name="title" placeholder="Title">
+                <div class="card">
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <input type="text" class="form-control mt-1 ml-1" name="title" placeholder="Title">
+                        </div>
+                        <div class="col-5 col-md-4">
+                            <input type="text" class="form-control mt-1 mr-2" name="number" placeholder="Notice No.">
+                        </div>
                     </div>
-                    <div class="col-5 col-md-4">
-                        <input type="text" class="form-control mt-1 mr-2" name="number" placeholder="Notice No.">
+                    <div class="row">
+                        <div class="col-12 col-md-8 mt-3 ml-1 mb-1">
+                            <input type="file" name="uploadfile">
+                        </div>
+                        <div class="col-6 col-md-4 mt-2 mb-1 ml-1">
+                            <input type="submit" class="btn btn-md btn-warning" name="upload" value="Upload">
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-md-8 mt-3 ml-1 mb-1">
-                        <input type="file"  name="uploadfile" >
-                    </div>
-                    <div class="col-6 col-md-4 mt-2 mb-1 ml-1">
-                        <input type="submit" class="btn btn-md btn-warning" name="upload" value="Upload">
-                    </div>
-                </div>
-            </div>
             </form>
         </div>
         <div class="col-10 col-md-4 mt-5">
-            <p type="button" id="update_password1" style="color:blue">Change Password</p>
+            <div class="card">
+                <div class="p-2">
+                    <p type="button" id="update_password1" style="color:#1a75ff">Change Password</p>
+                    <li class="dropdown-divider"></li>
+                    <a href="add_staff.php?v=none" style="text-decoration: none;">Add New Staff</a><br>
+                    <li class="dropdown-divider"></li>
+                    <a href="remove_staff.php" style="text-decoration: none;">Remove Staff</a>
+                    <li class="dropdown-divider"></li>
+                    <a href="student_update.php?q=none" style="text-decoration: none;">Add/Remove Student</a>
+                    <li class="dropdown-divider"></li>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
 
 <div class="container mt-3">
     <h4 class="mt-4">Notice Archive</h4>
-    <?php 
-        $query="SELECT * FROM notice";
-        $result=mysqli_query($conn,$query);
-        if(mysqli_num_rows($result)==0){
-            echo "<h5 class='mt-4'>No Notice !</h5>";
-        }
-        while($row=mysqli_fetch_assoc($result)){
-            echo '
+    <?php
+    $query = "SELECT * FROM notice";
+    $result = mysqli_query($conn, $query);
+    if (mysqli_num_rows($result) == 0) {
+        echo "<h5 class='mt-4'>No Notice !</h5>";
+    }
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo '
             <div class="card mt-2 mb-2">
             <div class="row ml-1 mt-1 mb-1">
                 <div class="col-md-2 ">
-                    <span>'.$row['notice_no'].'</span>
+                    <span>' . $row['notice_no'] . '</span>
                 </div>
                 <div class="col-md-4 ">
-                    <h5>'.$row['name'].'</h5>
+                    <h5>' . $row['name'] . '</h5>
                 </div>
                 <div class="col-md-3 ">
-                    <p>'.$row['date'].'</p>
+                    <p>' . $row['date'] . '</p>
                 </div>
                 <div class="col-md-2 mt-1">
-                <a href="notices/'.$row['path'].'" download>Download</a>
+                <a href="notices/' . $row['path'] . '" download>Download</a>
                 </div>
                 <div class="col-md-1 mt-1">
                 <form action="delete_notice.php" method="POST">
-                <input type="hidden" value="'.$row['notice_no'].'" name="notice_no">
+                <input type="hidden" value="' . $row['notice_no'] . '" name="notice_no">
                 <button type="submit" class="mt-1 mb-1 mr-1 btn btn-danger btn-sm" name=""><i class="fa-solid fa-trash" style="color:white"></i> Delete</button>
                 </form>
                 </div>
             </div>
         </div>
             ';
-        }
+    }
     ?>
-    
+
 </div>
 <?php
-    include "includes/contact_div.php";
-  ?>
+include "includes/contact_div.php";
+?>

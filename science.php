@@ -11,6 +11,11 @@ include "includes/dbconn.php";
     .box:hover {
         box-shadow: 0 0 11px rgba(33, 33, 33, .8);
     }
+    table, table th, table td {
+    border-collapse: collapse;
+    border: #888 1px solid;
+    padding: 0 5px;
+}
 </style>
 <div class="container">
 <div class="row">

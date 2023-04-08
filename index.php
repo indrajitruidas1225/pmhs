@@ -52,8 +52,13 @@ include "includes/dbconn.php";
     .overview {
       margin-left: 20px;
     }
-    .unique{
+
+    .unique {
       margin-left: 15px;
+    }
+
+    .anandabazar {
+      display: none;
     }
   }
 
@@ -65,15 +70,19 @@ include "includes/dbconn.php";
   #more {
     display: none;
   }
+
   #btn {
     cursor: pointer;
     color: blue;
-}
-table, table th, table td {
+  }
+
+  table,
+  table th,
+  table td {
     border-collapse: collapse;
     border: #888 1px solid;
     padding: 0 5px;
-}
+  }
 </style>
 <div style="background-color: white;" class="animation">
   <div class="container text">
@@ -137,7 +146,7 @@ table, table th, table td {
         Our school is
         approachable by all weather road. In our school academic session starts in January.Our school <span id="dots">....</span>
         <span id="more">has well-equipped <b style="font-family:'Lucida Sans';">Library , Laboratories , ICT Room for Computer Education .</b>Our school
-          also has a<b style="font-family:'Lucida Sans';"> hostel (R G Ashram Hostel ) for the boys belonging to SC category</b>.We also have <b style="font-family:'Lucida Sans';">Open Schooling
+          has a<b style="font-family:'Lucida Sans';"> hostel (R G Ashram Hostel ) for the boys belonging to SC category</b>.We have <b style="font-family:'Lucida Sans';">Open Schooling
             (Rabindra Open School)</b> upto HS(both Science & Arts).
           Our school also has <b style="font-family:'Lucida Sans';">Vocational Stream (Mobile Repairing ),NCC Junior Wing (JD & JW) and well-equipped gymnasium.</b>
         </span><a onclick="readmore()" id="read-btn" style="color:blue" type="button">Read More</a>
@@ -206,7 +215,7 @@ table, table th, table td {
                 break;
               echo '
           <li>
-          <i class="far fa-hand-point-right" style="font-size:24px"></i><a href="notices/' . $row['path'] . '" download style="text-decoration:none">&nbsp' . $row['name'] . '&nbsp<img src="img/news1.gif"</a>
+          <i class="far fa-hand-point-right" style="font-size:24px"></i><a href="notices/' . $row['path'] . '" download style="text-decoration:none">&nbsp' . $row['name'] . '&nbsp<img src="img/news1.gif" alt="No Image""</a>
         </li>
         <li class="dropdown-divider"></li>';
               $c++;
@@ -220,20 +229,31 @@ table, table th, table td {
   </div>
   <div class="col-12 col-md-4 mt-1 mb-2 unique">
     <div class="card ">
-    <div style="background-color: rgb(6, 6, 69);">
+      <div style="background-color: rgb(6, 6, 69);">
         <h4 class="text-white p-1" style="text-align:center;font-family:cursive;">What Makes Our School Unique ?</h4>
       </div>
     </div>
     <div class="card-body" style="background-color: white;">
-    <p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have NCC Junior Wing (JD & JW) Affiliated 
-  to 53 Bengal BN NCC Bishnupur</p>
-  
-  <p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have an Open School
-(Rabindra Open School) upto 12th for both Science & Arts <a style="color:blue" href="open_school.php">(Click here)</a></p>
-<p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> Our School has
-Hostel Facility for boys belonging to SC Category.</p>
-<p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have Vocational Stream
-from class VIII (Mobile Repairing)</p>
+      <p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have NCC Junior Wing (JD & JW) Affiliated
+        to 53 Bengal BN NCC Bishnupur</p>
+
+      <p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have an Open School
+        (Rabindra Open School) upto 12th for both Science & Arts <a style="color:blue" href="open_school.php">(Click here)</a></p>
+      <p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> Our School has
+        Hostel Facility for boys belonging to SC Category.</p>
+      <p style="font-family: serif;color:green"><i class="fa-solid fa-highlighter"></i> We have Vocational Stream
+        from class VIII (Mobile Repairing)</p>
+    </div>
+  </div>
+  <div class="col-12 col-md-4 mt-1 mb-2 anandabazar">
+    <div class="card">
+      <div style="background-color: rgb(6, 6, 69);">
+        <h4 class="text-white p-1" style="text-align:center;font-family:cursive;">Our School in Anandabazar Patrika</h4>
+      </div>
+      <div class="card-body">
+        <a href="news/26march2020.jpg"><img src="news/26march2020.jpg" alt="news image" style="height:auto;width:100%"></a>
+      </div>
+
     </div>
   </div>
   <div class="col-12 col-md-4 mb-2 mt-1 overview">
@@ -244,76 +264,76 @@ from class VIII (Mobile Repairing)</p>
       <div class="card-body">
         <table class="tbl">
           <tbody>
-          <tr>
-            <th>Particulars</th>
-            <th>Total Count</th>
-            <th>Remarks</th>
-          </tr>
-          <tr>
-            <td>Teaching Staff</td>
-            <td>26</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Non-Teaching Staff</td>
-            <td>6</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Classrooms</td>
-            <td>32</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Staffroom</td>
-            <td>1</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Office Room</td>
-            <td>1</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Laboratories</td>
-            <td>4</td>
-            <td style="word-break:break-all">Physics,Chemistry,Biology,Geography</td>
-          </tr>
-          <tr>
-            <td>ICT Room</td>
-            <td>1</td>
-            <td style="word-break:break-all">For Computer Education</td>
-          </tr>
-          <tr>
-            <td>Hostel(R G Ashram Hostel)</td>
-            <td>1</td>
-            <td style="word-break:break-all">For SC Boys</td>
-          </tr>
-          <tr>
-            <td>Playground</td>
-            <td>1</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Gymnasium</td>
-            <td>1</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Mid Day Meal Shed</td>
-            <td>2</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Boys Toilet/Latrine</td>
-            <td>1</td>
-            <td>N/A</td>
-          </tr>
-          <tr>
-            <td>Girls Toilet/Latrine</td>
-            <td>1</td>
-            <td>N/A</td>
-          </tr>
+            <tr>
+              <th>Particulars</th>
+              <th>Total Count</th>
+              <th>Remarks</th>
+            </tr>
+            <tr>
+              <td>Teaching Staff</td>
+              <td>26</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Non-Teaching Staff</td>
+              <td>6</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Classrooms</td>
+              <td>32</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Staffroom</td>
+              <td>1</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Office Room</td>
+              <td>1</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Laboratories</td>
+              <td>4</td>
+              <td style="word-break:break-all">Physics,Chemistry,Biology,Geography</td>
+            </tr>
+            <tr>
+              <td>ICT Room</td>
+              <td>1</td>
+              <td style="word-break:break-all">For Computer Education</td>
+            </tr>
+            <tr>
+              <td>Hostel(R G Ashram Hostel)</td>
+              <td>1</td>
+              <td style="word-break:break-all">For SC Boys</td>
+            </tr>
+            <tr>
+              <td>Playground</td>
+              <td>1</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Gymnasium</td>
+              <td>1</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Mid Day Meal Shed</td>
+              <td>2</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Boys Toilet/Latrine</td>
+              <td>1</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>Girls Toilet/Latrine</td>
+              <td>1</td>
+              <td>N/A</td>
+            </tr>
           </tbody>
         </table>
       </div>

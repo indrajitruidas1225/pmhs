@@ -18,9 +18,6 @@
         $_SESSION['t_id']=$result['teacher_id'];
         $_SESSION['t_pass']=$result['password'];
         $_SESSION['t_img']=$result['img_path'];
-        // $_SESSION['name']='null';
-        // $_SESSION['id']='null';
-        // $_SESSION['img']='null';
         echo '1';
     }
     else{

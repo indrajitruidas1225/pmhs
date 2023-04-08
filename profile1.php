@@ -1,6 +1,20 @@
 <?php
 include "includes/dbconn.php";
 include "includes/navbar.php";
+if (!isset($_SESSION['t_id'])) {
+    echo 'No Log in Found';
+    exit;
+}
+else{
+    $id=$_SESSION['t_id'];
+    $query="SELECT * FROM staff WHERE staff_id='$id'";
+    $result=mysqli_query($conn,$query);
+    $row=mysqli_fetch_assoc($result);
+
+    $query1="SELECT * FROM teacher WHERE teacher_id='$id'";
+    $result1=mysqli_query($conn,$query1);
+    $row1=mysqli_fetch_assoc($result1);
+}
 ?>
 <script type="text/javascript">
     $(document).ready(function() {
@@ -64,6 +78,16 @@ include "includes/navbar.php";
                 </ul>
                 <h5 class="ml-2 mt-1 mb-1"><?php
                                             echo $_SESSION['t_name'] ?></h5>
+                <li class="dropdown-divider"></li>
+                <span style="color:green" class="ml-1 mt-1 mb-1"><?php echo $row['designation'] ?></span>
+                <li class="dropdown-divider"></li>
+                <span style="color:blue" class="ml-2 mt-1 mb-1"><?php echo $row['qualifications'] ?></span>
+                <li class="dropdown-divider"></li>
+                <span style="color:blueviolet" class="ml-2 mt-1 mb-1"><?php echo $row['specialization'] ?></span>
+                <li class="dropdown-divider"></li>
+                <p style="font-size: 12px;" class="ml-2">
+            &#9742;: <?php echo $row1['mobile'] ?><br>
+            &#x1F4E7;: <?php echo $row1['email'] ?><br></p>
                 <a id="log_out_btn" class="btn btn-danger btn-sm mt-1 mb-1" href="t_logout.php"><i class="fa fa-sign-out" aria-hidden="true" style="color:white"></i> Log Out</a>
             </div>
         </div>
@@ -101,7 +125,10 @@ include "includes/navbar.php";
             </form>
         </div>
         <div class="col-10 col-md-4 mt-5">
-            <p type="button" id="update_password" style="color:blue">Change Password</p>
+            <div class="card p-2">
+                <p type="button" id="update_password" style="color:#1a75ff">Change Password</p>
+                <a href="edit_details.php" style="text-decoration: none;">Edit Your Details</a>
+            </div>
         </div>
     </div>
 </div>
